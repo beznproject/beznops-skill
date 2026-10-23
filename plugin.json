@@ -1,0 +1,20 @@
+{
+  "name": "beznops",
+  "version": "1.0.0",
+  "description": "The unified Senior Engineering & Art Direction plugin for Antigravity, combining anti-slop, taste-skill, ponytail, and everything-claude-code.",
+  "author": "beznproject",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:beznproject/beznops-skill.git"
+  },
+  "skills": [
+    ".agents/skills/beznops"
+  ],
+  "agents": [
+    ".agents/agents/beznops-architect.md",
+    ".agents/agents/beznops-reviewer.md",
+    ".agents/agents/beznops-crafter.md"
+  ],
+  "hooks": "hooks/hooks.json"
+}

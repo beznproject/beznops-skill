@@ -1,0 +1,21 @@
+{
+  "description": "Lifecycle hooks configuration for beznops: pre-edit slop detection, secret protection, and verification checks.",
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "matcher": "tool in ['Write', 'Edit'] && path matches '\\.(html|jsx|tsx|vue|svelte|astro|md|css)$'",
+      "description": "Guards against em-dash, AI buzzwords, and hardcoded secrets before writing files.",
+      "action": "warn_or_check",
+      "rules": [
+        "No em-dash (—) characters allowed in UI text or prose (use comma, colon, or period).",
+        "No AI marketing buzzwords (e.g., 'AI Powered', 'Seamless', 'Revolutionary', 'Cutting Edge').",
+        "No hardcoded API keys or secrets (sk-..., tokens, passwords)."
+      ]
+    },
+    {
+      "event": "PreCommit",
+      "description": "Runs static lint and checks for dead controls or broken caller signatures before commit.",
+      "command": "powershell -ExecutionPolicy Bypass -File .agents/skills/beznops/scripts/beznops-helper.ps1 lint ."
+    }
+  ]
+}

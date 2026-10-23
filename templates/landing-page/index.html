@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Blueprint | Beznops</title>
+  <link rel="stylesheet" href="../../.agents/skills/beznops/assets/base.css">
+  <style>
+    :root {
+      --bg: #0c0d0e;
+      --ink: #f2f4f7;
+      --muted: #9ba3af;
+      --accent: #2563eb;
+      --surface: #16181b;
+      --font-display: system-ui, -apple-system, sans-serif;
+      --font-text: system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    header {
+      padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 4rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Rule: Headline must fit in 2 lines or fewer across all viewports */
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0 0 1.5rem 0;
+      max-width: 24ch;
+    }
+
+    .subhead {
+      font-size: clamp(1.125rem, 2vw, 1.35rem);
+      color: var(--muted);
+      max-width: 50ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px; /* Touch target >= 44px */
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 4rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">BrandName</div>
+    <nav>
+      <a href="#features" class="btn btn-primary" style="min-height: 40px; padding: 0.5rem 1rem;">Mulai Sekarang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Satu Kalimat Tegas Menjawab Kebutuhan Inti.</h1>
+      <p class="subhead">Penjelasan jujur tentang apa produk ini, siapa yang menggunakannya, dan mengapa dibuat tanpa kalimat pemasaran berlebihan.</p>
+      <div class="cta-row">
+        <a href="#action" class="btn btn-primary">Daftar Akun Baru</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <!-- Content driven by argument, not identical card templates -->
+    </section>
+  </main>
+
+</body>
+</html>
