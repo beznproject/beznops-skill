@@ -4,12 +4,18 @@
 [![Platform](https://img.shields.io/badge/Platform-Antigravity%20%7C%20AGY-orange.svg)](https://antigravity.google)
 [![Cross-Platform](https://img.shields.io/badge/OS-Windows%20%7C%20macOS%20%7C%20Linux-green.svg)](install.sh)
 
-**`beznops`** adalah plugin dan skill terpadu (*unified system*) untuk **Google Antigravity**, menggabungkan 4 repositori kelas dunia menjadi satu alur kerja kohesif:
+**`beznops`** adalah plugin dan skill terpadu (*unified system*) untuk **Google Antigravity**, menggabungkan 5 pilar sistem kelas dunia dan 24 modul desain menjadi satu alur kerja kohesif ("overkill mode"):
 
 1. **[`anti-slop`](https://github.com/miqdadbadjuber/anti-slop.git)** — 38 aturan wajib (`R-01`–`R-38`), Craftsmanship Standard (`C-1`–`C-5`), Liveliness Dials (`ENERGY / RHYTHM / MOTION`), filter anti-AI-slop (UI, copywriting, WCAG AA, mobile reflow, kebersihan komentar).
 2. **[`taste-skill` v2](https://github.com/Leonxlnx/taste-skill.git)** — Sistem Art Direction dari riset 247 situs Awwwards & One Page Love, pengundi arah (`draw.mjs`), pencari foto arsip komersial (`assets.mjs`), linter (`lint.mjs`), inspektor browser asli (`inspect.mjs`), dan scroll scenes (`scenes.mjs`).
 3. **[`ponytail`](https://github.com/DietrichGebert/ponytail.git)** — Disiplin Senior Developer pragmatis: *smallest complete change*, 6 tangga YAGNI, pelacakan caller, pelacak utang teknis `// shortcut: <limit>, <trigger>`, serta mode `audit`, `review`, dan `debt`.
 4. **[`everything-claude-code`](https://github.com/WorldFlowAI/everything-claude-code.git)** — Standar arsitektur produksi (React/Next.js frontend, API/Repository/DB backend), checklist keamanan OWASP 10-poin, alur TDD pragmatis, orkestrasi subagent, dan **6-Phase Verification Loop**.
+5. **Overkill Design Engine Stack (`modules/*`)** — 24 modul desain frontend terpadu yang menggabungkan:
+   - **[Hallmark v2.0](https://github.com/nutlope/hallmark)**: 56 tema arketipe & 21 makrostruktur halaman.
+   - **[Interface Design](https://github.com/Dammyjay93/interface-design)**: Standar craft-first UI, `design-deslop`, dan `design-review`.
+   - **[shadcn/ui](https://github.com/shadcn/ui)**: Komponen modular Tailwind/Radix UI & migrasi otomatis.
+   - **[Anthropic Skills](https://github.com/anthropics/skills)**: Frontend architecture, Canvas visual design, Algorithmic art, Theme factory, dan Web artifact builder.
+   - **[interfaces.dev / Jakub Krehel](https://github.com/jakubkrehel/skills)**: 14 modul mikro-desain (Better Typography, Better Colors, Better Layout, Better UI, Accessibility, Writing, State Machine, Teardown).
 
 ---
 

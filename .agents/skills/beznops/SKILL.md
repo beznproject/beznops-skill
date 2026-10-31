@@ -23,6 +23,7 @@ description: >-
 2. **Production Architecture, TDD & Verification (`everything-claude-code`)**: Immutability, clean modular architecture, OWASP security hardening, behavior-driven testing, subagent delegation, and a strict 6-Phase Verification Gate.
 3. **Research-Driven Art Direction & Browser Inspection (`taste-skill` v2)**: Replaces generic AI layouts with researched art directions (`scripts/draw.mjs`), subject-specific concepts, real archival photography (`scripts/assets.mjs`), strict house rules, and real-browser measurement (`scripts/inspect.mjs`).
 4. **Anti-Slop Filter, Liveliness & Craftsmanship (`anti-slop`)**: Enforces 38 mandatory rules (`R-01`–`R-38`), 5 Craftsmanship standards (`C-1`–`C-5`), explicit Liveliness Dials (`ENERGY / RHYTHM / MOTION`), WCAG AA contrast (`scripts/contrast-check.py`), natural human copywriting, and a mandatory Delivery Gate.
+5. **Overkill Design Engine Stack (`modules/*`)**: Curated multi-engine ecosystem combining Anthropic Frontend & Canvas Design, Hallmark (56 thematic archetypes & 21 macrostructures), shadcn/ui components, Interface Design (craft-first UI), and interfaces.dev / Jakub's 14 micro-design skills (Better Typography, Colors, Layout, Accessibility, UI).
 
 ---
 
@@ -303,3 +304,38 @@ Before delivering any UI or copy work, verify all 4 blocks (`Hard Gate`, `Purpos
   - [`references/ecc-tdd-workflow.md`](./references/ecc-tdd-workflow.md) — TDD Red-Green-Refactor workflow, unit/integration/Playwright E2E patterns, and mocking.
   - [`references/ecc-verification-and-ops.md`](./references/ecc-verification-and-ops.md) — 6-Phase Verification Loop, Subagent orchestration, Strategic Compaction, and Git/PR discipline.
 
+
+
+---
+
+## Pillar 5: Overkill Design Engine Stack & Hierarchy
+
+When designing interfaces, landing pages, design systems, and web apps, **beznops** orchestrates an overkill multi-engine design stack. Each engine contributes its specialized superpower.
+
+### Design Engines & Specialized Modules (`./modules/`)
+
+| Engine / Module | Source / Provenance | Primary Superpower & Role |
+| :--- | :--- | :--- |
+| **`modules/hallmark`** | nutlope/hallmark v2.0 | **56 Archetype Themes & 21 Macrostructures**. Deep thematic art direction (Neo-Brutalist, Editorial Monochrome, Cyberpunk Terminal, Swiss Minimal, Luxury Serif, etc.) with strict token palettes, font pairings, and anti-slop rules. |
+| **`modules/interface-design`** | Dammyjay93/interface-design | **Craft-first Product UI & Review Rules**. Purpose-driven layouts, deep contrast hierarchy, micro-interactions, responsive states, and commands (`design-deslop`, `design-review`). |
+| **`modules/shadcn`** | shadcn/ui official | **Radix / Tailwind Component Registry**. Clean, accessible, composable primitives, automated CLI configuration (`components.json`), and migration tools (`shadcn-migrate-radix-to-base`). |
+| **`modules/anthropic-*`** | anthropics/skills | **Production-grade Frontend & Canvas Stack**: <br>- `anthropic-frontend-design`: Senior frontend architecture & component hierarchy.<br>- `anthropic-theme-factory`: Theme tokens & dynamic mode toggles.<br>- `anthropic-canvas-design`: Generative visual compositions & interactive canvas.<br>- `anthropic-algorithmic-art`: Mathematical & procedural SVGs/shaders.<br>- `anthropic-web-artifacts-builder`: Standalone self-contained HTML/JS single-file preview builder.<br>- `anthropic-webapp-testing`: Visual regression & interaction test suite. |
+| **`modules/better-*`** | jakubkrehel/skills (interfaces.dev) | **Laser-targeted Interface Polish**: <br>- `better-typography`: Micro-typography, baseline grids, measure (&le;75ch), title arithmetic.<br>- `better-colors`: Color harmony, perceived lightness, dark mode contrast.<br>- `better-layout`: Spatial balance, whitespace hierarchy, negative space tension.<br>- `better-ui`: Component affordance, tactile states, feedback loops.<br>- `better-accessibility`: Screen-reader tree, keyboard focus trap, aria semantics.<br>- `better-writing`: Micro-copy, error message UX, zero filler.<br>- `better-interface`: Holistic interface design synthesis.<br>- `interface-review`, `explain-interface`, `build-design`, `variant`, `state-machine`, `break`, `teardown`: Complete UX diagnostic and rapid ideation toolkit. |
+
+### Engine Precedence & Routing
+
+To eliminate conflicts across engines, follow this strict decision hierarchy:
+
+1. **User Explicit Request**: If the user asks for a specific theme or engine (e.g. "Gunakan Hallmark style Cyberpunk", "Pakai shadcn/ui", or "Review UI ini pakai better-typography"), activate that module directly.
+2. **Marketing, Landing Pages & Showcases**:
+   - Primary: `taste-skill` v2 or `modules/hallmark` (choose 1 of 56 curated archetypes).
+   - Filter: `anti-slop` R-01..R-38 + `modules/better-typography` + `modules/better-writing`.
+3. **Application Screens, Dashboards & SaaS**:
+   - Primary: `modules/interface-design` + `references/app-screens.md` (`taste-skill --app`).
+   - Token & Components: `modules/shadcn` (if React/Next/Tailwind) or `assets/app.css` (vanilla HTML/CSS).
+   - Polish & State: `modules/better-ui` + `modules/state-machine` + `modules/better-accessibility`.
+4. **Interactive Graphics & Generative Visuals**:
+   - Activate `modules/anthropic-canvas-design` or `modules/anthropic-algorithmic-art`.
+5. **Universal Hard Floor (Non-Negotiable)**:
+   - All designs must pass `anti-slop` 4-Block Delivery Gate and WCAG AA contrast (4.5:1 text, 3:1 graphical elements).
+   - Never use AI-tells (generic purple gradients, floating cards with glowing drop-shadows, centered empty hero copy, buzzwords).
