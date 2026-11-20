@@ -112,6 +112,28 @@ A comment earns its place when it explains something the code does not already s
 
 Earning a place says what may stay, never how long it may run. A workaround note is one line about the workaround, not a paragraph about it. The example above is two lines because two facts are real, not because two lines is a target. This list is the most common reason a comment survives a review it should not: the content is legitimately valuable, so the length goes unexamined. Value is not length.
 
+## Mandatory Function & Business Logic Header Explanations
+
+To ensure maximum codebase clarity without introducing generic decorative slop, **every function, method, endpoint, and non-trivial business logic block MUST have an explanatory header comment placed directly above it**.
+
+### 1. The Function Header Contract
+Place a clean, informative doc-comment or header comment directly above the function/logic signature:
+- **What it does (Purpose & Business Intent):** Explain the core capability or domain concept handled by the function.
+- **Why it exists / Context:** What triggers it, what business rule it satisfies, or what problem it solves.
+- **Non-obvious behavior / Edge cases:** Error behavior, idempotency, side effects, or concurrency assumptions.
+
+### 2. Format & Style
+- Use standard docstring or clean block comments according to language convention (e.g. `/** ... */` or `///` or `#` / `"""`).
+- Keep it concise, natural, and informative.
+- **DO NOT** repeat trivial signatures (e.g. avoid `// getUserById gets user by id`). Instead, explain: `// Retrieves active user profile and decrypts sensitive billing preferences. Throws NotFoundException if deleted or suspended.`
+
+### 3. Inline Logic Comments
+For non-trivial conditional branches, calculations, algorithms, or state transitions:
+- Precede the block with a 1-line explanation of the business reason or algorithm rationale.
+- Example: `// Apply tiered volume discount when order total exceeds threshold before shipping calculation`
+
+---
+
 ## Code Comment Checklist
 
 Run these alongside the core Delivery Gate when the task touches comments. All answers must be **yes**:
@@ -125,4 +147,5 @@ Run these alongside the core Delivery Gate when the task touches comments. All a
 - [ ] Is the comment density one per logical block, not one per line?
 - [ ] Is every comment one line, or two only when the second carries a new fact?
 - [ ] Do the remaining comments read short, natural, and in sentence case?
+- [ ] Does every function, method, and non-trivial logic block include a clear explanatory header explaining purpose, intent, and edge cases?
 - [ ] Is the scope guardrail held: only comments changed, the code untouched?

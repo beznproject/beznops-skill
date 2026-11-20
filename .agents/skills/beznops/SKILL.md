@@ -24,6 +24,7 @@ description: >-
 3. **Research-Driven Art Direction & Browser Inspection (`taste-skill` v2)**: Replaces generic AI layouts with researched art directions (`scripts/draw.mjs`), subject-specific concepts, real archival photography (`scripts/assets.mjs`), strict house rules, and real-browser measurement (`scripts/inspect.mjs`).
 4. **Anti-Slop Filter, Liveliness & Craftsmanship (`anti-slop`)**: Enforces 38 mandatory rules (`R-01`–`R-38`), 5 Craftsmanship standards (`C-1`–`C-5`), explicit Liveliness Dials (`ENERGY / RHYTHM / MOTION`), WCAG AA contrast (`scripts/contrast-check.py`), natural human copywriting, and a mandatory Delivery Gate.
 5. **Overkill Design Engine Stack (`modules/*`)**: Curated multi-engine ecosystem combining Anthropic Frontend & Canvas Design, Hallmark (56 thematic archetypes & 21 macrostructures), shadcn/ui components, Interface Design (craft-first UI), and interfaces.dev / Jakub's 14 micro-design skills (Better Typography, Colors, Layout, Accessibility, UI).
+6. **Software Engineering Classics & Clean Logic Architecture (`modules/books/*`)**: 14 fundamental engineering books distilled into actionable rules (Clean Code, Clean Architecture, Pragmatic Programmer, Refactoring, DDIA, Domain-Driven Design, PoEAA, Release It, etc.). Enforces crystal-clear function and business logic header comments directly above implementations so code is instantly understandable without AI slop.
 
 ---
 
@@ -37,6 +38,7 @@ Select the workflow that matches the user's request and load only the references
 | **App Screen / Dashboard / Admin / Settings UI** | `taste-skill` (`--app`) + `anti-slop` + `ecc-frontend` | Read [`references/app-screens.md`](./references/app-screens.md), [`references/antislop-ui.md`](./references/antislop-ui.md), [`references/antislop-human.md`](./references/antislop-human.md), [`references/ecc-frontend-patterns.md`](./references/ecc-frontend-patterns.md). Run `draw.mjs --app` & `inspect.mjs --app`. |
 | **Copywriting / UX Microcopy / Docs / Prose** | `anti-slop` + `taste-skill` | Read [`references/antislop-copywriting.md`](./references/antislop-copywriting.md) and [`references/copy.md`](./references/copy.md). |
 | **Responsive / Mobile Reflow & Accessibility** | `anti-slop` + `taste-skill` | Read [`references/antislop-layoutmobile.md`](./references/antislop-layoutmobile.md), [`references/antislop-human.md`](./references/antislop-human.md), [`references/layout.md`](./references/layout.md). Run [`scripts/contrast-check.py`](./scripts/contrast-check.py). |
+| **Architecture Design / Domain Modeling / Clean Code & Refactoring** | `books/*` + `ponytail` + `ecc-backend` | Apply appropriate classic book modules: [`clean-code`](./modules/books/clean-code), [`clean-architecture`](./modules/books/clean-architecture), [`domain-driven-design`](./modules/books/domain-driven-design), [`refactoring`](./modules/books/refactoring), or [`designing-data-intensive-applications`](./modules/books/designing-data-intensive-applications). Enforce mandatory function/logic header explanations. |
 | **Feature Implementation / Bug Fix / Refactoring** | `ponytail` + `everything-claude-code` | Follow **Section 1** & **Section 2**. Read [`references/ecc-coding-standards.md`](./references/ecc-coding-standards.md), [`references/antislop-code.md`](./references/antislop-code.md), and either [`references/ecc-frontend-patterns.md`](./references/ecc-frontend-patterns.md) or [`references/ecc-backend-patterns.md`](./references/ecc-backend-patterns.md). |
 | **Whole-Repo Quality & Bloat Audit** (`audit`) | `ponytail-audit` + `ecc-security` | Read [`references/ponytail-audit.md`](./references/ponytail-audit.md) and [`references/ecc-security-review.md`](./references/ecc-security-review.md). Changes no code; outputs ranked report. |
 | **PR / Commit / Diff Code Review** (`review`) | `ponytail-review` + `ecc-security` | Read [`references/ponytail-review.md`](./references/ponytail-review.md) and [`references/ecc-security-review.md`](./references/ecc-security-review.md). Traces callers, checks bugs/scale/lean. |
@@ -339,3 +341,49 @@ To eliminate conflicts across engines, follow this strict decision hierarchy:
 5. **Universal Hard Floor (Non-Negotiable)**:
    - All designs must pass `anti-slop` 4-Block Delivery Gate and WCAG AA contrast (4.5:1 text, 3:1 graphical elements).
    - Never use AI-tells (generic purple gradients, floating cards with glowing drop-shadows, centered empty hero copy, buzzwords).
+
+
+---
+
+## Pillar 6: Software Engineering Classics & Clean Function Explanations
+
+To ensure all code written by **beznops** is rock-solid, production-grade, and self-documenting for humans, the system integrates distilled rules from 14 software engineering classics and enforces strict function documentation standards.
+
+### The 14 Software Engineering Book Modules (`./modules/books/`)
+
+| Book Module | Author(s) | Primary Rules Applied |
+| :--- | :--- | :--- |
+| **`modules/books/clean-code`** | Robert C. Martin | Small single-purpose functions, meaningful intention-revealing names, maximum 2-3 arguments, no null/magic error returns, explanatory headers. |
+| **`modules/books/clean-architecture`** | Robert C. Martin | Inward Dependency Rule, domain isolation, separation of frameworks and DB schemas from business logic. |
+| **`modules/books/the-pragmatic-programmer`** | Andrew Hunt, David Thomas | DRY (Don't Repeat Yourself), orthogonality, Broken Windows Theory, crash early, ETC (Easier To Change). |
+| **`modules/books/refactoring`** & **`refactoring-guru`** | Martin Fowler, Alexander Shvets | Catalog of smells (Long Method, Feature Envy, Primitive Obsession) and safe step-by-step refactorings. |
+| **`modules/books/a-philosophy-of-software-design`** | John Ousterhout | Deep modules (simple interface, powerful implementation), strategic vs tactical programming, defining errors out of existence. |
+| **`modules/books/code-complete`** | Steve McConnell | Defensive programming, variable scoping, routine quality, class interface design. |
+| **`modules/books/domain-driven-design`** & family | Eric Evans, Vaughn Vernon | Ubiquitous language, bounded contexts, entities, value objects, aggregates, domain events. |
+| **`modules/books/designing-data-intensive-applications`** | Martin Kleppmann | Scalability, reliability, ACID vs BASE, storage indexing, replication, partitioning, stream processing. |
+| **`modules/books/patterns-of-enterprise-application-architecture`** | Martin Fowler | Unit of Work, Repository, Data Mapper, Domain Model, Service Layer patterns. |
+| **`modules/books/release-it`** | Michael T. Nygard | Circuit Breakers, Bulkheads, Timeouts, shedding load, fail-fast, steady-state resilience. |
+| **`modules/books/working-effectively-with-legacy-code`** | Michael Feathers | Seams, characterization tests, break dependencies safely without breaking existing production behavior. |
+
+### Mandatory Function & Logic Header Explanation Standard
+
+Every function, method, endpoint, and non-trivial business logic block written or edited by **beznops** MUST have a clear explanatory header directly above it:
+
+1. **Purpose & Intent**: Explain what the function accomplishes in plain human terms.
+2. **Context & Business Rules**: What triggers it or what domain policy governs it.
+3. **Edge Cases & Failure Modes**: Non-obvious behaviors, exceptions thrown, or idempotency rules.
+4. **Inline Logic Annotations**: Complex branches or calculations must be preceded by a single-line explanation of the business reason or algorithm rationale.
+
+```typescript
+/**
+ * Processes refund transaction and reconciles payment provider ledger.
+ * - Idempotent: checks for prior refund execution before contacting gateway.
+ * - Dispatches AuditLogEvent upon success.
+ * @throws {PaymentGatewayException} When payment gateway connection fails or times out.
+ */
+export async function processRefund(transactionId: string, amount: Money): Promise<RefundReceipt> {
+  // Verify gateway status before locking local transaction row
+  await gatewayClient.healthCheck();
+  ...
+}
+```

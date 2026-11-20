@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Antigravity%20%7C%20AGY-orange.svg)](https://antigravity.google)
 [![Cross-Platform](https://img.shields.io/badge/OS-Windows%20%7C%20macOS%20%7C%20Linux-green.svg)](install.sh)
 
-**`beznops`** adalah plugin dan skill terpadu (*unified system*) untuk **Google Antigravity**, menggabungkan 5 pilar sistem kelas dunia dan 24 modul desain menjadi satu alur kerja kohesif ("overkill mode"):
+**`beznops`** adalah plugin dan skill terpadu (*unified system*) untuk **Google Antigravity**, menggabungkan 6 pilar sistem kelas dunia, 14 buku arsitektur klasik, dan 24 modul desain menjadi satu alur kerja kohesif ("overkill mode"):
 
 1. **[`anti-slop`](https://github.com/miqdadbadjuber/anti-slop.git)** — 38 aturan wajib (`R-01`–`R-38`), Craftsmanship Standard (`C-1`–`C-5`), Liveliness Dials (`ENERGY / RHYTHM / MOTION`), filter anti-AI-slop (UI, copywriting, WCAG AA, mobile reflow, kebersihan komentar).
 2. **[`taste-skill` v2](https://github.com/Leonxlnx/taste-skill.git)** — Sistem Art Direction dari riset 247 situs Awwwards & One Page Love, pengundi arah (`draw.mjs`), pencari foto arsip komersial (`assets.mjs`), linter (`lint.mjs`), inspektor browser asli (`inspect.mjs`), dan scroll scenes (`scenes.mjs`).
@@ -16,6 +16,15 @@
    - **[shadcn/ui](https://github.com/shadcn/ui)**: Komponen modular Tailwind/Radix UI & migrasi otomatis.
    - **[Anthropic Skills](https://github.com/anthropics/skills)**: Frontend architecture, Canvas visual design, Algorithmic art, Theme factory, dan Web artifact builder.
    - **[interfaces.dev / Jakub Krehel](https://github.com/jakubkrehel/skills)**: 14 modul mikro-desain (Better Typography, Better Colors, Better Layout, Better UI, Accessibility, Writing, State Machine, Teardown).
+6. **Software Engineering Classics & Clean Code Architecture (`modules/books/*`)** — 14 buku rekayasa perangkat lunak legendaris (berdasarkan [agent-rules-books](https://github.com/ciembor/agent-rules-books)):
+   - **Clean Code** & **Clean Architecture** (Robert C. Martin / Uncle Bob)
+   - **The Pragmatic Programmer** (Hunt & Thomas)
+   - **Refactoring** & **Refactoring Guru** (Martin Fowler & Shvets)
+   - **A Philosophy of Software Design** (John Ousterhout)
+   - **Designing Data-Intensive Applications** (Martin Kleppmann)
+   - **Domain-Driven Design (DDD)** & **Implementing DDD** (Eric Evans & Vaughn Vernon)
+   - **Code Complete** (Steve McConnell), **PoEAA** (Fowler), **Release It!** (Nygard), **Working Effectively with Legacy Code** (Feathers).
+   - **Standar Penjelasan Logika & Fungsi**: Wajib mencantumkan komentar/docstring yang jelas di atas setiap fungsi atau blok logika non-trivial agar mudah dipahami manusia tanpa menjadi AI-slop.
 
 ---
 
